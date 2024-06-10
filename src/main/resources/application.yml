@@ -1,0 +1,32 @@
+app:
+  data-sources:
+    - name: data-base-1
+      url: jdbc:postgresql://localhost:5432/database1
+      table: users
+      user: testuser
+      password: testpass
+      mapping:
+        id: user_id
+        username: login
+        name: first_name
+        surname: last_name
+    - name: data-base-2
+      url: jdbc:postgresql://localhost:5432/database2
+      table: user_table
+      user: testuser
+      password: testpass
+      mapping:
+        id: ldap_login
+        username: ldap_login
+        name: name
+        surname: surname
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    org.springdoc: DEBUG
